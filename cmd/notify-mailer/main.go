@@ -441,7 +441,7 @@ func main() {
 
 	dbURL, err := cfg.NotifyMailer.DBConfig.URL()
 	cmd.FailOnError(err, "Couldn't load DB URL")
-	dbMap, err := sa.NewDbMap(dbURL, 10)
+	dbMap, err := sa.NewDbMap(dbURL, 10, nil)
 	cmd.FailOnError(err, "Could not connect to database")
 
 	// Load email body
